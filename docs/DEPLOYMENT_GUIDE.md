@@ -143,10 +143,16 @@ Then compile the contract in Remix and run the script from the Remix file explor
 - Confirm `hasCertificate` returns `false` after revocation.
 - Confirm `getTotalCertificates` matches the expected active count.
 
-## Run Tests in Remix
+## Manual Validation
 
-1. Open the "Solidity Unit Testing" plugin in Remix.
-2. Select `tests/CertificateIssuer_test.sol`.
-3. Run the test file.
+Use the deployed contract panel in Remix or another Ethereum client to validate the contract behavior manually.
 
-The test suite covers the main `CertificateIssuer` behaviors, including owner-only operations, certificate issuance, verification, duplicate prevention, revocation, reissuance, recipient tracking, and access-control failures.
+Recommended checks:
+
+- Confirm `owner()` returns the deploying wallet.
+- Issue a certificate from the owner account.
+- Verify the certificate with `verifyCertificate`.
+- Confirm duplicate issuance to the same recipient reverts.
+- Revoke the certificate from the owner account.
+- Confirm `hasCertificate` returns `false` after revocation.
+- Confirm `getTotalCertificates` reflects the active certificate count.

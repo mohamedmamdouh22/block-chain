@@ -26,9 +26,6 @@ scripts/
   ethers-lib.ts                 Shared ethers.js deploy function.
   web3-lib.ts                   Shared web3.js deploy function.
 
-tests/
-  CertificateIssuer_test.sol    Remix tests for the certificate contract.
-
 artifacts/
   CertificateIssuer.json        Compiled contract artifact.
   CertificateIssuer_metadata.json
@@ -87,7 +84,18 @@ Detailed documentation is available in the `docs/` directory:
 
 ## Testing
 
-The `tests/` directory contains Remix Solidity tests for `CertificateIssuer`. The suite covers ownership, certificate issuance, verification, duplicate prevention, zero-address rejection, revocation, reissuance after revocation, recipient tracking, and non-owner access control.
+No automated test suite is currently included. Validate the contract by interacting with the deployed `CertificateIssuer` contract in Remix or another Ethereum client.
+
+Recommended manual checks:
+
+- Confirm `owner()` returns the deploying wallet.
+- Issue a certificate from the owner account.
+- Verify the certificate with `verifyCertificate`.
+- Confirm `hasCertificate` returns `true` for the issued recipient.
+- Confirm duplicate issuance to the same recipient reverts.
+- Revoke the certificate from the owner account.
+- Confirm `hasCertificate` returns `false` after revocation.
+- Confirm `getTotalCertificates` reflects the active certificate count.
 
 ## Security Notes
 
