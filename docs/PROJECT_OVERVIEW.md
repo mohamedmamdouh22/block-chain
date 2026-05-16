@@ -110,7 +110,7 @@ The array allows the owner to list all active certificate recipients and lets an
 - No certificate ID separate from recipient address.
 - No update/edit function for an issued certificate.
 - No off-chain metadata hash or document URI field.
-- No dedicated `CertificateIssuer` tests are currently included.
+- Tests are currently written for Remix; there is no standalone Hardhat or Foundry test setup.
 
 ## Recommended Improvements
 
@@ -120,5 +120,5 @@ For production use, consider adding:
 - Support for multiple certificates per recipient.
 - Certificate IDs for easier indexing.
 - A metadata hash or URI for linking to off-chain certificate files.
-- Dedicated test coverage for all contract functions and revert paths.
+- A standalone Hardhat or Foundry test setup for local CLI and CI execution.
 - Deployment scripts configured directly for `CertificateIssuer`.

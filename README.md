@@ -27,8 +27,7 @@ scripts/
   web3-lib.ts                   Shared web3.js deploy function.
 
 tests/
-  Ballot_test.sol               Remix default placeholder test.
-  storage.test.js               Remix default placeholder test.
+  CertificateIssuer_test.sol    Remix tests for the certificate contract.
 
 artifacts/
   CertificateIssuer.json        Compiled contract artifact.
@@ -86,9 +85,9 @@ Detailed documentation is available in the `docs/` directory:
 - [docs/CONTRACT_REFERENCE.md](docs/CONTRACT_REFERENCE.md) documents the contract state, functions, events, permissions, and revert conditions.
 - [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md) explains how to compile, deploy, and interact with the contract in Remix.
 
-## Testing Status
+## Testing
 
-The current `tests/` directory still contains Remix default placeholder tests for `Storage` and `Ballot`. They do not test `CertificateIssuer` yet. Before using this contract in production, add dedicated tests for issuing, duplicate prevention, verification, revocation, owner permissions, and recipient tracking.
+The `tests/` directory contains Remix Solidity tests for `CertificateIssuer`. The suite covers ownership, certificate issuance, verification, duplicate prevention, zero-address rejection, revocation, reissuance after revocation, recipient tracking, and non-owner access control.
 
 ## Security Notes
 

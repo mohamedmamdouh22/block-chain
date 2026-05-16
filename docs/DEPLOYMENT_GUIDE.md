@@ -142,3 +142,11 @@ Then compile the contract in Remix and run the script from the Remix file explor
 - Revoke the test certificate.
 - Confirm `hasCertificate` returns `false` after revocation.
 - Confirm `getTotalCertificates` matches the expected active count.
+
+## Run Tests in Remix
+
+1. Open the "Solidity Unit Testing" plugin in Remix.
+2. Select `tests/CertificateIssuer_test.sol`.
+3. Run the test file.
+
+The test suite covers the main `CertificateIssuer` behaviors, including owner-only operations, certificate issuance, verification, duplicate prevention, revocation, reissuance, recipient tracking, and access-control failures.
